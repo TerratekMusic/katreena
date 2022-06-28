@@ -56,7 +56,7 @@
     <!-- <meta property="og:image" content=""> -->
 
     <!-- site favicon -->
-    <link rel="icon" type="image/png" href="assets/images/faviconK.png" />
+    <link rel="icon" type="image/png" href="assets/images/faviconKN.png" />
 
     <!-- ====== All css file ========= -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -97,7 +97,7 @@
         <div class="header__content">
           <div class="header__logo">
             <a href="index.html">
-              <img src="assets/images/logo/logoKS.png" alt="logo" />
+              <img src="assets/images/logo/logoBKN.png" alt="logo" />
             </a>
           </div>
 
@@ -135,7 +135,7 @@
                       >Home One <span class="badge bg-theme ms-3">New</span>
                     </a>
                   </li>
-                  <li>
+                  <!-- <li>
                     <a class="drop-down-item" href="index-2.html">Home Two</a>
                   </li>
                   <li>
@@ -145,7 +145,7 @@
                     <a class="drop-down-item active" href="index-4.html"
                       >Home Four</a
                     >
-                  </li>
+                  </li> -->
                 </ul>
               </li>
               <li class="header__nav-item">
@@ -174,7 +174,7 @@
                 </ul>
               </li>
               <li class="header__nav-item">
-                <a href="activity.html" class="header__nav-link">Activity</a>
+                <a href="activity.html" class="header__nav-link">Create</a>
               </li>
               <li class="header__nav-item">
                 <a
@@ -322,7 +322,7 @@
                       ><span class="me-1"
                         ><i class="icofont-lightning-ray"></i
                       ></span>
-                      Activity</a
+                      Create</a
                     >
                   </li>
                   <li>
@@ -381,10 +381,10 @@
                   <span class="theme-color" data-blast="color"
                     >Katreena NFTs</span
                   >
-                  Buy <br />
-                  And Sell
-                  <span class="theme-color" data-blast="color">Plant</span> a
-                  Tree
+                  3D AR <br />
+                  Satellite
+                  <span class="theme-color" data-blast="color">Data </span>
+                  Reactive
                 </h1>
                 <p>
                   Digital Marketplace For Ecological Backed NFT's. Buy Katree's
@@ -394,18 +394,17 @@
                   <button id="btn-login" class="default-btn move-right">
                     <span>Sign In</span>
                   </button>
-
-                  <button id="btn-getNFTs" class="default-btn move-right">
-                    <span>My NFTs</span>
-                  </button>
-
-                  <button id="getMetadata" class="default-btn move-right">
-                    <span>GetM</span>
-                  </button>
-
-                  <!-- <a href="signin.html" class="default-btn move-right"
+                  <a href="activity.html" class="default-btn move-right"
                     ><span>Create</span>
-                  </a> -->
+                  </a>
+
+                  <!-- <button id="btn-getNFTs" class="default-btn move-right">
+                    <span>My NFTs</span>
+                  </button> -->
+
+                  <!-- <button id="getMetadata" class="default-btn move-right">
+                    <span>Get Ndvi</span>
+                  </button> -->
                 </div>
               </div>
             </div>
@@ -423,7 +422,7 @@
     </section>
     <!-- ===============//banner section end here \\================= -->
 
-    <!-- upload file -->
+    <!-- OLD upload file new is in activity.html
     <section class="upload-section padding-top padding-bottom">
       <div class="container">
         <div class="section-header"></div>
@@ -438,7 +437,7 @@
                   placeholder="NFTree Name"
                 />
                 <label for="metadataName">NFTree Name</label>
-                <!-- <button type="button"> <i class="icofont-search-1"></i></button> -->
+               
               </div>
               <div class="form-floating nft-search-input">
                 <input type="file" name="fileInput" id="fileInput" />
@@ -455,27 +454,26 @@
       </div>
     </section>
 
-    <!-- Import the component -->
-
-    <!-- MODEL VIEWER Use it like any other HTML element -->
+     MODEL VIEWER Use it like any other HTML element -->
 
     <section class="viewNft-section padding-top padding-bottom">
       <div class="container">
-        <div class="section-header">....</div>
+        <div class="section-header">My 3D NFTs</div>
         <div class="section-wrapper model-viewr">
           <div class="row">
             <div id="katreeDiv"></div>
-            <!-- <model-viewer
+            <model-viewer
               alt="3D NFT Model"
-              src="https://ipfs.moralis.io:2053/ipfs/QmWRfWcufr2vG9dMoqg71JBjDQsXypkT8sdzqifHnMGwHP/3Dmodels/00000000000000000000000000000000000000000000000000000000000000001.glb"
+              src="assets/tree1.glb"
               ar
               ar-modes="webxr scene-viewer quick-look"
               environment-image="neutral"
-              poster="assets/NeilArmstrong.webp"
+              poster="#"
               seamless-poster
               shadow-intensity="1"
               camera-controls
-            ></model-viewer> -->
+              exposure="0.5"
+            ></model-viewer>
             <!--  https://ipfs.moralis.io:2053/ipfs/QmUHkzsquNzLxb9BiqTxx9XxFmU9BzY9rKvhQzg3vbxmX3 "https://ipfs.moralis.io:2053/ipfs/QmdLBbNGGjdgYZfaXX6AFiSsAMUnvvgoXYycz2VcQbP8cF/3Dmodels/00000000000000000000000000000000000000000000000000000000000000001.glb" -->
           </div>
           <div id="tableOfNFTs2">
@@ -498,7 +496,7 @@
               <div class="col-lg-6">
                 <div class="newsletter-part">
                   <div class="ft-header">
-                    <h4>Get The Latest Rarible Updates</h4>
+                    <h4>Get The Latest Katreena Updates</h4>
                   </div>
                   <form action="#">
                     <input type="email" placeholder="Your Mail Address" />
@@ -652,6 +650,8 @@
     ///katreena Scripts
     <script src="assets/js/main.js"></script>
     <script src="assets/js/uploadNFT.js"></script>
-    <script src="assets/js/displayNFTs.js"></script>
+    <!-- <script src="assets/js/displayNFTs.js"></script> -->
+    <script src="assets/js/mint721.js"></script>
+    <!-- <script src="assets/js/GenerarNFT.js"></script> -->
   </body>
 </html>

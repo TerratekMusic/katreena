@@ -1,5 +1,5 @@
-//NFT MINTING TEST
-const nft_contract_address = "0xb0520B7f1e49Ac7a94B53C1BbeFA175006a2f028"; //NFT Minting Contract Use This One "Batteries Included", code of this contract is in the github repository under contract_base for your reference.
+//NFT MINTING TEST // const nft_contract_address = "0xb0520B7f1e49Ac7a94B53C1BbeFA175006a2f028";
+const nft_contract_address = "0x886f344b16eBAfC10B37E4bae8385E5D9cc434B3"; //NFT Minting Contract Use This One "Batteries Included", code of this contract is in the github repository under contract_base for your reference.
 /*
 Available deployed contracts
 katreena Kovan 0xb0520B7f1e49Ac7a94B53C1BbeFA175006a2f028
@@ -29,59 +29,54 @@ const web3 = new Web3(window.ethereum);
 // }
 
 async function upload() {
-  const fileInput = document.getElementById("fileA");
+    const fileInput = document.getElementById("fileA");
 
-  const data = fileInput.files[0];
-  const imageFile = new Moralis.File(data.name, data);
-  document.getElementById("uploadA").setAttribute("disabled", null);
-  document.getElementById("fileA").setAttribute("disabled", null);
-  document.getElementById("nameA").setAttribute("disabled", null);
-  document.getElementById("descriptionA").setAttribute("disabled", null);
-  await imageFile.saveIPFS();
-  const imageURI = imageFile.ipfs();
-  const metadata = {
-    name: document.getElementById("nameA").value,
-    description: document.getElementById("descriptionA").value,
-    image: imageURI,
-  };
-  const metadataFile = new Moralis.File("metadata.json", {
-    base64: btoa(JSON.stringify(metadata)),
-  });
-  await metadataFile.saveIPFS();
-  const metadataURI = metadataFile.ipfs();
-  const txt = await mintToken(metadataURI).then(notify);
+    const data = fileInput.files[0];
+    const imageFile = new Moralis.File(data.name, data);
+    document.getElementById("uploadA").setAttribute("disabled", null);
+    document.getElementById("fileA").setAttribute("disabled", null);
+    document.getElementById("nameA").setAttribute("disabled", null);
+    document.getElementById("descriptionA").setAttribute("disabled", null);
+    await imageFile.saveIPFS();
+    const imageURI = imageFile.ipfs();
+    const metadata = {
+        name: document.getElementById("nameA").value,
+        description: document.getElementById("descriptionA").value,
+        image: imageURI,
+    };
+    const metadataFile = new Moralis.File("metadata.json", {
+        base64: btoa(JSON.stringify(metadata)),
+    });
+    await metadataFile.saveIPFS();
+    const metadataURI = metadataFile.ipfs();
+    const txt = await mintToken(metadataURI).then(notify);
 }
 
 async function mintToken(_uri) {
-  const encodedFunction = web3.eth.abi.encodeFunctionCall(
-    {
-      name: "mintToken",
-      type: "function",
-      inputs: [
-        {
-          type: "string",
-          name: "tokenURI",
-        },
-      ],
-    },
-    [_uri]
-  );
+    const encodedFunction = web3.eth.abi.encodeFunctionCall({
+        name: "mintToken",
+        type: "function",
+        inputs: [{
+            type: "string",
+            name: "tokenURI",
+        }, ],
+    }, [_uri]);
 
-  const transactionParameters = {
-    to: nft_contract_address,
-    from: ethereum.selectedAddress,
-    data: encodedFunction,
-  };
-  const txt = await ethereum.request({
-    method: "eth_sendTransaction",
-    params: [transactionParameters],
-  });
-  return txt;
+    const transactionParameters = {
+        to: nft_contract_address,
+        from: ethereum.selectedAddress,
+        data: encodedFunction,
+    };
+    const txt = await ethereum.request({
+        method: "eth_sendTransaction",
+        params: [transactionParameters],
+    });
+    return txt;
 }
 
 async function notify(_txt) {
-  document.getElementById(
-    "resultSpace"
-  ).innerHTML = `<input disabled = "true" id="result" type="text" class="form-control" placeholder="Description" aria-label="URL" aria-describedby="basic-addon1" value="Your NFT was minted in transaction ${_txt}">`;
+    document.getElementById(
+        "resultSpace"
+    ).innerHTML = `<input disabled = "true" id="result" type="text" class="form-control" placeholder="Description" aria-label="URL" aria-describedby="basic-addon1" value="Your NFT was minted in transaction ${_txt}">`;
 }
 //END NFT MINTING

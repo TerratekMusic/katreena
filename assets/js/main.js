@@ -153,5 +153,5 @@ getNFTs2 = async (nfts) => {
 /* <p class"card-text">${metadata.attributes[0]}</p> */
 document.getElementById("btn-login").onclick = logIn;
 // document.getElementById("getMetadata").onclick = searchNdvi();
-// document.getElementById("btn-getNFTs").onclick = getTransferNFTs();
+document.getElementById("btn-getNFTs").onclick = getTransferNFTs();
 document.getElementById("logOut").onclick = logOUT;

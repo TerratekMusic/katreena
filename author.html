@@ -14,7 +14,7 @@
     <!-- <meta property="og:image" content=""> -->
 
     <!-- site favicon -->
-    <link rel="icon" type="image/png" href="assets/images/faviconK.png" />
+    <link rel="icon" type="image/png" href="assets/images/faviconKN.png" />
 
     <!-- ====== All css file ========= -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -23,6 +23,12 @@
     <link rel="stylesheet" href="assets/css/lightcase.css" />
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- model viewer link -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
 
     <!-- moralis server -->
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
@@ -304,12 +310,31 @@
                 </ul>
               </div>
             </div>
-            <div class="wallet-btn">
+            <!-- <div class="wallet-btn">
               <a href="wallet.html"
-                ><span><i class="icofont-wallet" data-blast="color"></i></span>
-                <p class="d-none d-md-inline" id="userAddress">No user</p>
-              </a>
+                ><span><i class="icofont-wallet" data-blast="color"></i></span> -->
+            <!-- <p class="d-none d-md-inline" id="userAddress">No user</p> -->
+            <!-- <li class="crypto-copy"> -->
+            <div id="cryptoCode" class="crypto-page">
+              <input id="cryptoLink" value="No User" readonly />
+              <div
+                id="cryptoCopy"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Copy Address"
+              >
+                <span class="copy-icon">
+                  <i
+                    class="icofont-ui-copy"
+                    aria-hidden="true"
+                    data-copytarget="#cryptoLink"
+                  ></i>
+                </span>
+              </div>
             </div>
+            <!-- </li> -->
+            <!-- </a>
+            </div> -->
           </div>
 
           <button class="menu-trigger header__btn" id="menu05">
@@ -377,10 +402,7 @@
                 <ul class="profile-contact">
                   <li class="crypto-copy">
                     <div id="cryptoCode" class="crypto-page">
-                      <input
-                        id="cryptoLink"
-                        value="0x731F9FBF4163D47B0F581DD9EC45C9"
-                      />
+                      <!-- <input id="cryptoLink" value="No User" /> -->
                       <div
                         id="cryptoCopy"
                         data-bs-toggle="tooltip"
@@ -565,6 +587,34 @@
               </nav>
               <div class="tab-content" id="nav-tabContent">
                 <!-- All NFT tab -->
+                <section
+                  class="viewNft-section padding-top padding-bottom black-bg"
+                >
+                  <div class="container">
+                    <div class="section-header">My 3D NFTs</div>
+                    <div class="section-wrapper model-viewr">
+                      <div class="row">
+                        <div id="katreeDivA"></div>
+                        <model-viewer
+                          alt="3D NFT Model"
+                          src="assets/tree1.glb"
+                          ar
+                          ar-modes="webxr scene-viewer quick-look"
+                          environment-image="neutral"
+                          poster="#"
+                          seamless-poster
+                          shadow-intensity="1"
+                          camera-controls
+                          exposure="0.5"
+                        ></model-viewer>
+                        <!--  https://ipfs.moralis.io:2053/ipfs/QmUHkzsquNzLxb9BiqTxx9XxFmU9BzY9rKvhQzg3vbxmX3 "https://ipfs.moralis.io:2053/ipfs/QmdLBbNGGjdgYZfaXX6AFiSsAMUnvvgoXYycz2VcQbP8cF/3Dmodels/00000000000000000000000000000000000000000000000000000000000000001.glb" -->
+                      </div>
+                      <div id="tableOfNFTs2">
+                        <div id="NFTtable2" class="d-flex flex-wrap"></div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
                 <div
                   class="tab-pane activity-page fade show active"
                   id="allNft"
@@ -891,6 +941,7 @@
                               >
                                 <div
                                   class="row justify-content-center gx-3 gy-2"
+                                  id="katreeDivB"
                                 >
                                   <div class="col-lg-4 col-sm-6">
                                     <div class="nft-item">
@@ -5789,5 +5840,6 @@
     //Katreena scrypts
     <script src="assets/js/main.js"></script>
     <script src="assets/js/mint721.js"></script>
+    <script src="assets/js/profile.js"></script>
   </body>
 </html>

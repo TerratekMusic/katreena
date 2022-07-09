@@ -716,6 +716,12 @@
       img {
         border-radius: 10px;
       }
+      .mdv {
+        border: 2px solid $royal-blue;
+        border-radius: 50%;
+        max-width: 44px;
+        object-fit: cover;
+      }
     }
 
     &:hover {

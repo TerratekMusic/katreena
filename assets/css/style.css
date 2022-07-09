@@ -1051,6 +1051,11 @@ ol {
     background-color: rgba(255, 255, 255, 0.1); }
   .nft-item.home-3 .nft-thumb img {
     border-radius: 10px; }
+  .nft-item.home-3 .nft-thumb .mdv {
+    border: 2px solid #030010;
+    border-radius: 50%;
+    max-width: 44px;
+    object-fit: cover; }
   .nft-item.home-3:hover {
     transform: none; }
     .nft-item.home-3:hover .nft-inner {

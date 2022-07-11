@@ -1,5 +1,8 @@
-//NFT MINTING TEST // const nft_contract_address = "0xb0520B7f1e49Ac7a94B53C1BbeFA175006a2f028";
-const nft_contract_address = "0x886f344b16eBAfC10B37E4bae8385E5D9cc434B3"; //NFT Minting Contract Use This One "Batteries Included", code of this contract is in the github repository under contract_base for your reference.
+//NFT MINTING TEST 
+const nft_contract_address = "0xb0520B7f1e49Ac7a94B53C1BbeFA175006a2f028";
+// const nft_contract_address = "0x886f344b16eBAfC10B37E4bae8385E5D9cc434B3";
+
+//NFT Minting Contract Use This One "Batteries Included", code of this contract is in the github repository under contract_base for your reference.
 /*
 Available deployed contracts
 katreena Kovan 0xb0520B7f1e49Ac7a94B53C1BbeFA175006a2f028
